@@ -31,7 +31,7 @@ case "$cmd" in
     echo "Local Dev, .env"
     echo "Valid Envs: prod, staging, dev "
     echo "Rename .env to .env-[env] when done"
-    file=.env
+    file=.env_dist
     #exit 1
   ;;
 esac
