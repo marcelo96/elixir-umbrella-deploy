@@ -29,7 +29,8 @@ config :master_proxy,
 # which you should run after static files are built and
 # before starting your production server.
 config :front, Front.Endpoint,
-  url: [host: "front.#{base_domain}", port: 4000],
+  url: [scheme: "https", host: "front.#{base_domain}", port: 4000],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json",
   check_origin: originslist,
   server: false
